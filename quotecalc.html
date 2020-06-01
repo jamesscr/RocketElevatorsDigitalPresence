@@ -16,7 +16,9 @@
 		rel="stylesheet">
 
 	<!-- CORE CSS -->
+	
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	
 
 	<!-- REVOLUTION SLIDER -->
 	<link href="assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
@@ -151,11 +153,11 @@
 
 							<div class="col-md-6 m-0">
 								<label class="fs-18">Number of Apartments</label>
-								<input id="inp-apartments" type="number" class="form-control" value="" min="1">
+								<input id="apartmentValue" type="number" class="form-control required resInput" value="" min="1">
 								<label class="fs-18">Number of Floors</label>
-								<input id="inp-floors" type="number" class="form-control" value="" min="1">
+								<input id="floorsValue" type="number" class="form-control required resInput" value="" min="1">
 								<label class="fs-18">Number of Basement</label>
-								<input id="inp-basement" type="number" class="form-control" value="" min="1">
+								<input id="basementValue" type="number" class="form-control required resInput" value="" min="1">
 							</div>
 
 
@@ -185,7 +187,7 @@
 						</div><br><br>
 						<div>
 							<label class="fs-18">Number of Elevators Needed</label>
-							<input id="inp-elevators" type="number" class="form-control" value="" readonly>
+							<input name="numElevatorsRes" type="number" class="form-control required resInput" value="" readonly>
 						</div>
 
 
@@ -194,18 +196,18 @@
 								<tr>
 									<td class="b-0 p-3">Elevators Price</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-elevators-price">0</span>
+											name="elevatorsPriceRes">0</span>
 									</td>
 								</tr>
 								<tr>
 									<td class="b-0 p-3">Installation Fees</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-installation-fees">0</span></td>
+											name="installationFeesRes">0</span></td>
 								</tr>
 								<tr>
 									<td class="b-0 p-3">Total Price</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-total-price">0</span>
+											name="totalPriceRes">0</span>
 									</td>
 								</tr>
 							</tbody>
@@ -232,20 +234,20 @@
 
 							<div class="col-md-6 m-0">
 								<label class="fs-18">Number of Business</label>
-								<input id="inp-nobusiness" type="number" class="form-control" value=""
+								<input name="numBusinessCom" type="number" class="form-control required comInput" value=""
 									min="1">
 								<label class="fs-18">Number of Floors</label>
-								<input id="inp-floors" type="number" class="form-control" value="" min="1">
+								<input name="numFloorsCom" type="number" class="form-control required comInput" value="" min="1">
 								<label class="fs-18">Number of Basement</label>
-								<input id="inp-basement" type="number" class="form-control" value=""
+								<input name="numBasementCom" type="number" class="form-control required comInput" value=""
 									min="1">
 							</div>
 
 							<div class="col-md-6 m-0">
 								<label class="fs-18">Number of Parking</label>
-								<input id="inp-parking" type="number" class="form-control" value="" min="">
+								<input name="numParkingCom" type="number" class="form-control required comInput" value="" min="">
 								<label class="fs-18">Number of Elevator Cages</label>
-								<input id="inp-cages" type="number" class="form-control" value="" min="1">
+								<input name="numCagesCom" type="number" class="form-control required comInput" value="" min="1">
 							</div>
 
 						</div>
@@ -279,7 +281,7 @@
 
 						<div>
 							<label class="fs-18">Number of Elevator Needed</label>
-							<input id="inp-elevators" type="number" class="form-control" value="" min="1"
+							<input name="numElevatorsCom" type="number" class="form-control required comInput" value="" min="1"
 								readonly>
 						</div>
 						<hr />
@@ -289,18 +291,18 @@
 								<tr>
 									<td class="b-0 p-4">Elevators Price</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-elevators-price">0</span>
+											name="elevatorsPriceCom">0</span>
 									</td>
 								</tr>
 								<tr>
 									<td class="b-0 p-3">Installation Fees</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-installation-fees">0</span></td>
+											name="installationFeesCom">0</span></td>
 								</tr>
 								<tr>
 									<td class="b-0 p-3">Total Price</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-total-price">0</span>
+											name="totalPriceCom">0</span>
 									</td>
 								</tr>
 							</tbody>
@@ -328,20 +330,20 @@
 
 							<div class="col-md-6 m-0">
 								<label class="fs-18">Number of Seperate tenant Companies</label>
-								<input id="inp-companies" type="number" class="form-control" value=""
+								<input name="numCompaniesCor" type="number" class="form-control required corInput" value=""
 									min="1">
 								<label class="fs-18">Number of Floors</label>
-								<input id="inp-floors" type="number" class="form-control" value="" min="1">
+								<input name="numFloorsCor" type="number" class="form-control required corInput" value="" min="1">
 								<label class="fs-18">Number of Basement</label>
-								<input id="inp-basement" type="number" class="form-control" value=""
+								<input name="numBasementCor" type="number" class="form-control required required corInput" value=""
 									min="1">
 							</div>
 
 							<div class="col-md-6 m-0">
 								<label class="fs-18">Number of Parking Spaces</label>
-								<input id="inp-parking" type="number" class="form-control" value="" min="1">
+								<input name="numParkingCor" type="number" class="form-control required corInput" value="" min="1">
 								<label class="fs-18">Number of Occupant per Floor</label>
-								<input id="inp-occupant" type="number" class="form-control" value="" min="1">
+								<input name="numOccupantCor" type="number" class="form-control required corInput" value="" min="1">
 							</div>
 
 						</div>
@@ -371,7 +373,7 @@
 
 						<div>
 							<label class="fs-18">Number of Elevators Needed</label>
-							<input id="inp-elevators" type="number" class="form-control" value="" min="1" readonly>
+							<input name="numElevatorsCor" type="number" class="form-control required corInput" value="" min="1" readonly>
 						</div>
 
 						<hr />
@@ -381,18 +383,18 @@
 								<tr>
 									<td class="b-0 p-3">Elevators Price</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-elevators-price">0</span>
+											name="elevatorsPriceCor">0</span>
 									</td>
 								</tr>
 								<tr>
 									<td class="b-0 p-3">Installation Fees</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-installation-fees">0</span></td>
+											name="installationFeesCor">0</span></td>
 								</tr>
 								<tr>
 									<td class="b-0 p-3">Total Price</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-total-price">0</span>
+											name="totalPriceCor">0</span>
 									</td>
 								</tr>
 							</tbody>
@@ -418,20 +420,20 @@
 
 							<div class="col-md-6 m-0">
 								<label class="fs-18">Number of Distinct Business</label>
-								<input id="inp-business-hyb" type="number" class="form-control" value="" min="1">
+								<input name="numBusinessHyb" type="number" class="form-control required hybInput" value="" min="1">
 								<label class="fs-18">Number of Floors</label>
-								<input id="inp-floors-hyb" type="number" class="form-control" value="" min="1">
+								<input name="namFloorsHyb" type="number" class="form-control required hybInput" value="" min="1">
 								<label class="fs-18">Number of Basement</label>
-								<input id="mcalc-basement-hyb" type="number" class="form-control" value="" min="1">
+								<input name="numBasementHyb" type="number" class="form-control required hybInput" value="" min="1">
 							</div>
 
 							<div class="col-md-6 m-0">
 								<label class="fs-18">Number of Parking Spaces</label>
-								<input id="inp-parking-hyb" type="number" class="form-control" value="" min="1">
+								<input name="numParkingHyb" type="number" class="form-control required hybInput" value="" min="1">
 								<label class="fs-18">Number of Occupant per floor</label>
-								<input id="inp-occupant-hyb" type="number" class="form-control" value="" min="1">
+								<input name="numOccupantHyb" type="number" class="form-control required hybInput" value="" min="1">
 								<label class="fs-18">Number of Activity hrs</label>
-								<input id="inp-activity-hyb" type="number" class="form-control" value="" min="1">
+								<input name="numActivityHyb" type="number" class="form-control required hybInput" value="" min="1">
 							</div>
 
 						</div>
@@ -460,7 +462,7 @@
 						</div><br><br>
 						<div>
 							<label class="fs-18">Number of Elevators needed</label>
-							<input id="inp-elevators-hyb" type="number" class="form-control" value="" min="1"
+							<input name="numElevatorsHyb" type="number" class="form-control required hybInput" value="" min="1"
 								readonly>
 						</div>
 
@@ -471,18 +473,18 @@
 								<tr>
 									<td class="b-0 p-3">Elevators Price</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-elevators-price">0</span>
+											name="elevatorsPriceHyb">0</span>
 									</td>
 								</tr>
 								<tr>
 									<td class="b-0 p-3">Installation Fees</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-installation-fees">0</span></td>
+											name="installationFeesHyb">0</span></td>
 								</tr>
 								<tr>
 									<td class="b-0 p-3">Total Price</td>
 									<td class="b-0 p-3 text-right text-black fw-800">$<span
-											id="mcalc-total-price">0</span>
+											name="totalPriceHyb">0</span>
 									</td>
 								</tr>
 							</tbody>
@@ -580,21 +582,22 @@
 	<!-- /wrapper -->
 
 	<!-- SCROLL TO TOP -->
-	<a href="#top" id="toTop" style="display: inline;"></a>
+	<a href="#" id="toTop"></a>
+
+	<!-- PRELOADER -->
+	<div id="preloader">
+		<div class="inner">
+			<span class="loader"></span>
+		</div>
+	</div><!-- /PRELOADER -->
 
 	<!-- JAVASCRIPT FILES -->
-	<script>var plugin_path = 'assets/plugins/';</script>
+	<script>
+		var plugin_path = 'assets/plugins/';
+	</script>
 	<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-	<script src="assets/js/quote.js"></script>
+
 	<script src="assets/js/scripts.js"></script>
-
-	<!-- REVOLUTION SLIDER -->
-	<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
-	<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
-	<script src="assets/js/view/demo.revolution_slider.js"></script>
-
-	<!-- PAGELEVEL SCRIPTS -->
-	<script src="assets/js/contact.js"></script>
-	<script src="assets/js/view/pack_realestate.js"></script>
+	<script src="assets/js/quote.js"></script>
 
 </html>
