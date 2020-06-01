@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Rocket Elevators</title>
+	<meta name="description" content="Rocket Elevators" />
+	<meta name="Author" content="James [roelevators.com]" />
+
+	<!-- mobile settings -->
+	<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+	<!-- WEB FONTS : use %7C instead of | (pipe) -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,700&display=swap"
+		rel="stylesheet">
+
+	<!-- CORE CSS -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- REVOLUTION SLIDER -->
+	<link href="assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
+	<link href="assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
+
+	<!-- FAVICON -->
+	<link rel='icon' href='./assets/images/favicon_package/favicon.ico' type='image/x-icon'>
+
+	<!-- THEME CSS -->
+	<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+	<!-- PAGE LEVEL SCRIPTS -->
+	<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/color_scheme/yellow.css" rel="stylesheet" type="text/css" id="color_scheme" />
+</head>
+
+<!--BODY-->
+
+<body class="smoothscroll enable-animation">
+
+	<!-- wrapper -->
+	<div id="wrapper">
+
+		<!-- Top Nav -->
+
+
+		<div id="header" class="navbar-toggleable-md sticky header-sm dark clearfix">
+
+
+			<header id="topNav">
+				<div class="container-fluid">
+
+					<!-- Mobile Menu Button -->
+					<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse"><i
+							class="fa fa-bars"></i>
+					</button>
+
+					<!-- Logo -->
+					<a class="logo float-left" href="index.html">
+						<img src="assets/images/R2.png" alt="logo">
+					</a>
+
+
+					<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+						<nav class="nav-main">
+
+
+							<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+								<li>
+									<!-- HOME -->
+									<a href="index.html">
+										HOME
+									</a>
+								</li>
+								<li>
+									<!-- SERVICES -->
+									<a href="index.html#services">
+										SERVICES
+									</a>
+								</li>
+								<li>
+									<!-- WORK -->
+									<a href="index.html#work">
+										PORTFOLIO
+									</a>
+								</li>
+								<li>
+									<!-- NEWS -->
+									<a href="index.html#news">
+										NEWS
+									</a>
+								</li>
+								<li>
+									<!-- CLIENTS -->
+									<a href="index.html#clients">
+										CLIENTS
+									</a>
+								</li>
+								<li>
+									<!-- CONTACT -->
+									<a href="index.html#contact">
+										CONTACT
+									</a>
+								</li>
+							</ul>
+
+						</nav>
+					</div>
+
+				</div>
+			</header>
+
+
+		</div>
+
+		<!-- /Top Bar -->
+
+		<!-- BUILDING TYPES -->
+		<section class="page-header page-header-xs light">
+			<div class="container-fluid" id="accordion">
+
+
+
+
+
+				<h2>CHOOSE BUILDING TYPES</h2>
+				<select id="myBuilds" name="builds-types">
+					<option value="none">----SELECT----</option>
+					<option value="res">RESIDENTIAL</option>
+					<option value="com">COMMERCIAL</option>
+					<option value="corp">CORPORATE</option>
+					<option value="hyb">HYBRID</option>
+				</select>
+
+
+
+
+		</section>
+		<!--/BUILDING TYPES -->
+
+
+		<!-- Calculator If the type of building selected is "Residential"-->
+		<section id="calc-residential" class="mySelect_hide mySelect_res">
+			<div class="container-fluid">
+
+				<div class="row">
+
+					<div class="col-md-6">
+
+						<div class="row">
+
+							<div class="col-md-6 m-0">
+								<label class="fs-18">Number of Apartments</label>
+								<input id="inp-apartments" type="number" class="form-control" value="" min="1">
+								<label class="fs-18">Number of Floors</label>
+								<input id="inp-floors" type="number" class="form-control" value="" min="1">
+								<label class="fs-18">Number of Basement</label>
+								<input id="inp-basement" type="number" class="form-control" value="" min="1">
+							</div>
+
+
+						</div>
+
+					</div>
+
+					<div class="col-md-6 mb-30">
+
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="0">Standard
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="1">Premium
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="2">Excelium
+							</label>
+						</div><br><br>
+						<div>
+							<label class="fs-18">Number of Elevators Needed</label>
+							<input id="inp-elevators" type="number" class="form-control" value="" readonly>
+						</div>
+
+
+						<table class="table fs-14 m-0">
+							<tbody>
+								<tr>
+									<td class="b-0 p-3">Elevators Price</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-elevators-price">0</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">Installation Fees</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-installation-fees">0</span></td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">Total Price</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-total-price">0</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+		<!-- /Calculator -->
+
+		<!-- Calculator If the type of building selected is "Commercial"-->
+		<section id="calc-commercial" class="mySelect_hide mySelect_com">
+			<div class="container-fluid">
+
+				<div class="row">
+
+					<div class="col-md-6">
+
+						<div class="row">
+
+							<div class="col-md-6 m-0">
+								<label class="fs-18">Number of Business</label>
+								<input id="inp-nobusiness" type="number" class="form-control" value=""
+									min="1">
+								<label class="fs-18">Number of Floors</label>
+								<input id="inp-floors" type="number" class="form-control" value="" min="1">
+								<label class="fs-18">Number of Basement</label>
+								<input id="inp-basement" type="number" class="form-control" value=""
+									min="1">
+							</div>
+
+							<div class="col-md-6 m-0">
+								<label class="fs-18">Number of Parking</label>
+								<input id="inp-parking" type="number" class="form-control" value="" min="">
+								<label class="fs-18">Number of Elevator Cages</label>
+								<input id="inp-cages" type="number" class="form-control" value="" min="1">
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-6 mb-30">
+
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="0">Standard
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="1">Premium
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="2">Excelium
+							</label>
+						</div><br><br>
+
+
+
+
+
+						<div>
+							<label class="fs-18">Number of Elevator Needed</label>
+							<input id="inp-elevators" type="number" class="form-control" value="" min="1"
+								readonly>
+						</div>
+						<hr />
+
+						<table class="table fs-14 m-0">
+							<tbody>
+								<tr>
+									<td class="b-0 p-4">Elevators Price</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-elevators-price">0</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">Installation Fees</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-installation-fees">0</span></td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">Total Price</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-total-price">0</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					</div>
+
+				</div>
+
+				<!-- <a href="#mortgage-calculator" data-toggle="collapse" class="fs-13">CLOSE CALCULATOR</a> -->
+			</div>
+		</section>
+		<!-- /Calculator-->
+
+		<!-- Calculator If the type of building selected is "Corporate"-->
+		<section id="calc-corporate" class="mySelect_hide mySelect_corp">
+			<div class="container-fluid">
+
+				<div class="row">
+
+					<div class="col-md-6">
+
+						<div class="row">
+
+							<div class="col-md-6 m-0">
+								<label class="fs-18">Number of Seperate tenant Companies</label>
+								<input id="inp-companies" type="number" class="form-control" value=""
+									min="1">
+								<label class="fs-18">Number of Floors</label>
+								<input id="inp-floors" type="number" class="form-control" value="" min="1">
+								<label class="fs-18">Number of Basement</label>
+								<input id="inp-basement" type="number" class="form-control" value=""
+									min="1">
+							</div>
+
+							<div class="col-md-6 m-0">
+								<label class="fs-18">Number of Parking Spaces</label>
+								<input id="inp-parking" type="number" class="form-control" value="" min="1">
+								<label class="fs-18">Number of Occupant per Floor</label>
+								<input id="inp-occupant" type="number" class="form-control" value="" min="1">
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-6 mb-30">
+
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="0">Standard
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="1">Premium
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="0">Excelium
+							</label>
+						</div><br><br>
+
+						<div>
+							<label class="fs-18">Number of Elevators Needed</label>
+							<input id="inp-elevators" type="number" class="form-control" value="" min="1" readonly>
+						</div>
+
+						<hr />
+
+						<table class="table fs-14 m-0">
+							<tbody>
+								<tr>
+									<td class="b-0 p-3">Elevators Price</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-elevators-price">0</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">Installation Fees</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-installation-fees">0</span></td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">Total Price</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-total-price">0</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- /Calculator -->
+
+		<!-- Calculator If the type of building selected is "Hybrid"-->
+		<section id="calc-hybrid" class="mySelect_hide mySelect_hyb">
+			<div class="container-fluid">
+
+				<div class="row">
+
+					<div class="col-md-6">
+
+						<div class="row">
+
+							<div class="col-md-6 m-0">
+								<label class="fs-18">Number of Distinct Business</label>
+								<input id="inp-business-hyb" type="number" class="form-control" value="" min="1">
+								<label class="fs-18">Number of Floors</label>
+								<input id="inp-floors-hyb" type="number" class="form-control" value="" min="1">
+								<label class="fs-18">Number of Basement</label>
+								<input id="mcalc-basement-hyb" type="number" class="form-control" value="" min="1">
+							</div>
+
+							<div class="col-md-6 m-0">
+								<label class="fs-18">Number of Parking Spaces</label>
+								<input id="inp-parking-hyb" type="number" class="form-control" value="" min="1">
+								<label class="fs-18">Number of Occupant per floor</label>
+								<input id="inp-occupant-hyb" type="number" class="form-control" value="" min="1">
+								<label class="fs-18">Number of Activity hrs</label>
+								<input id="inp-activity-hyb" type="number" class="form-control" value="" min="1">
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-6 mb-30">
+
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="0">Standard
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="1">Premium
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								<input type="radio" class="form-check-input" name="optradio" onclick="calc(this)"
+									onchange="calc(this)" value="2">Excelium
+							</label>
+						</div><br><br>
+						<div>
+							<label class="fs-18">Number of Elevators needed</label>
+							<input id="inp-elevators-hyb" type="number" class="form-control" value="" min="1"
+								readonly>
+						</div>
+
+						<hr />
+
+						<table class="table fs-14 m-0">
+							<tbody>
+								<tr>
+									<td class="b-0 p-3">Elevators Price</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-elevators-price">0</span>
+									</td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">Installation Fees</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-installation-fees">0</span></td>
+								</tr>
+								<tr>
+									<td class="b-0 p-3">Total Price</td>
+									<td class="b-0 p-3 text-right text-black fw-800">$<span
+											id="mcalc-total-price">0</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- /Calculator -->
+
+		<!--  Parallax -->
+
+		<section class="parallax parallax-1" style="background-image: url('/assets/images/AdobeStock_73868131.jpeg');">
+
+
+			<div class="container">
+
+				<div class="text-center">
+					<h2 class="fs-40 fw-300">The company has been in business since 1976</h2>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- /Parallax -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<div class="container">
+
+
+				<div class="row">
+
+					<!-- col #1 -->
+					<div class="col-md-8">
+
+						<h6><i class="icon-phone"></i> Call us?</h6>
+
+						<p>Building the world of tomorrow involves a lot of things than doing business.
+							You are looking to meet the right partner for you project, we can provide the best
+							advices for the management.
+							<br>
+							Rocket Elevators is in service since 1976! </p>
+						<h2></strong> <a href="tel:(438)-825-5455">438-825-5455</a></span></h2>
+					</div>
+					<!-- /col #1 -->
+
+					<!-- col #2 -->
+					<div class="col-md-4">
+						<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+						<!-- Newsletter Form -->
+						<p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+						<form class="validate" action="php/newsletter.php" method="post"
+							data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+								<input type="email" id="email" name="email" class="form-control required"
+									placeholder="Enter your Email">
+								<span class="input-group-btn">
+									<button class="btn btn-success" type="submit">Subscribe</button>
+								</span>
+							</div>
+						</form>
+						<!-- /Newsletter Form -->
+
+
+					</div>
+					<!-- /col #2 -->
+
+				</div>
+
+
+			</div>
+
+			<div class="copyright">
+				<div class="container">
+					<ul class="float-right m-0 list-inline mobile-block submenu-dark">
+						<li><a href="#">Terms &amp; Conditions</a></li>
+						<li>&bull;</li>
+						<li><a href="#">Privacy</a></li>
+					</ul>
+					&copy; All Rights Reserved, Company LTD
+				</div>
+			</div>
+
+		</footer>
+		<!-- /FOOTER -->
+
+	</div>
+	<!-- /wrapper -->
+
+	<!-- SCROLL TO TOP -->
+	<a href="#top" id="toTop" style="display: inline;"></a>
+
+	<!-- JAVASCRIPT FILES -->
+	<script>var plugin_path = 'assets/plugins/';</script>
+	<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/quote.js"></script>
+	<script src="assets/js/scripts.js"></script>
+
+	<!-- REVOLUTION SLIDER -->
+	<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
+	<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="assets/js/view/demo.revolution_slider.js"></script>
+
+	<!-- PAGELEVEL SCRIPTS -->
+	<script src="assets/js/contact.js"></script>
+	<script src="assets/js/view/pack_realestate.js"></script>
+
+</html>
