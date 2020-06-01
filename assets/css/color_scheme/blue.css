@@ -172,13 +172,13 @@
 	}
 
 	#topNav ul.dropdown-menu {
-		border-color: #3072e0 #fff #fff;
+		border-color: #3072e0 rgb(196, 21, 21) rgb(196, 21, 21);
 	}
 	#topNav div.submenu-dark ul.dropdown-menu {
-		border-color: #3072e0 #3F3F3F #3F3F3F;
+		border-color: #3072e0 rgb(196, 21, 21) rgb(196, 21, 21);
 	}
 	#topNav div.submenu-color ul.dropdown-menu {
-		border-color: #3072e0 #3F3F3F #3F3F3F;
+		border-color: #3072e0 rgb(196, 21, 21) rgb(196, 21, 21)
 	}
 	#topMain li.search .search-box {
 		border-top: #3072e0 2px solid;
@@ -190,11 +190,11 @@
 		background-color:#3072e0;
 	}
 	#topNav div.submenu-color ul.dropdown-menu {
-		border-color: #888 #3072e0 #3072e0;
+		border-color: rgb(196, 21, 21) #3072e0 #3072e0;
 	}
 
 	#topNav div.submenu-color ul.dropdown-menu a.dropdown-toggle {
-		background-image: url('../../images/_smarty/submenu_light.png');
+		background-image: url('/assets/images/AdobeStock_73868131.jpeg');
 	}
 	#topNav div.submenu-color ul.dropdown-menu li.active>a, 
 	#topNav div.submenu-color ul.dropdown-menu li.active:hover>a, 
@@ -251,7 +251,7 @@
 		text-decoration:none;
 	}
 	section.theme-color a:hover {
-		color:#111;
+		color:rgb(196, 21, 21);
 	}
 	section.theme-color pre {
 		background-color:rgba(0,0,0,0.1);
