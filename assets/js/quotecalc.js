@@ -42,7 +42,7 @@ $(document).ready(function() {
         var price = nb_elevators * nb_shaft * selected_price_range ;
         console.log("price", price);
         //document.getElementById("total").innerHTML = price
-        printPrice(gamme, price,)
+        printPrice(gamme, price,);
         $("#total_elevator").html(nb_elevators);
         
     
@@ -64,7 +64,7 @@ $(document).ready(function() {
         console.log("price", price);
         $("#total_elevator").html(quantity_elevator);
         //document.getElementById("total").innerHTML = price
-        printPrice(gamme, price)
+        printPrice(gamme, price);
     }
     
     //Quantity Hybrid 
@@ -98,7 +98,7 @@ $(document).ready(function() {
         console.log("price", price);
         $("#total_elevator").html(hybrid_elevator_total);
         //document.getElementById("total").innerHTML = price
-        printPrice(gamme, price)
+        printPrice(gamme, price);
     
     
     }
@@ -145,10 +145,10 @@ $(document).ready(function() {
         console.log(price);
     
         var installation = gamme == "standard" ?
-            parseFloat((price * 0.10).toFixed(2)) :
+            parseFloat((price * 0.10).toFixed(2)):
             gamme == "premium" ?
-            parseFloat((price * 0.13).toFixed(2)) :
-            parseFloat((price * 0.16).toFixed(2))
+            parseFloat((price * 0.13).toFixed(2)):
+            parseFloat((price * 0.16).toFixed(2));
     
         var gamme_standard = parseFloat((price * 1.10).toFixed(2));
         if (gamme == 'standard')
@@ -158,7 +158,7 @@ $(document).ready(function() {
         if (gamme == 'premium')
             console.log("gamme_premium", gamme_premium);
     
-        var gamme_excelium = parseFloat((price * 1.16).toFixed(2))
+        var gamme_excelium = parseFloat((price * 1.16).toFixed(2));
         if (gamme == 'excelium')
             console.log("gamme_excelium", gamme_excelium);
     
@@ -169,7 +169,7 @@ $(document).ready(function() {
         $("#subtotal").html(`$ ${price + installation}`);
        // $("#total_elevator").html(nb_elevators);
         console.log(total_elevator);
-    }
+    };
     
     function pricetotal(gamme) {
         console.log(gamme);
