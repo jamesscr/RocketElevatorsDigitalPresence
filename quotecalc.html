@@ -117,204 +117,258 @@
 
 		<!-- /Top Bar -->
 
-		<section>
-			<div class="container" id="accordion">
-			<form id="quoteForm">
-					<!-- Select Type Buidling -->
-					<fieldset class="box-border shadow p-40">
-						<h3>Building Types</h3>
-	
-						<div class="jumbotron">
-							<label for="contact_department">Department *</label>
-							<select id="select_building_type" class="form-control pointer" name="select_building_type">
-								<option value="select">--- Select ---</option>
-								<option value="res">Residential</option>
-								<option value="com">Commercial</option>
-								<option value="corp">Corporate</option>
-								<option value="hyb">Hybrid</option>
-							</select>
-						</div>
-						
-					</fieldset>
-					<!-- /Select Type Buidling -->
-	
-					<!-- Alert Mandatory -->
-					<div id="alert_mandatory" class="alert alert-danger mb-30">
-						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						<strong>Sorry!</strong> mandatory (*) fields!
-					</div>
-					<!-- /Alert Mandatory -->
-	
-					<!-- Inputs Form-->
-					<fieldset>
-						<input type="hidden" value="contact_send" />
-	
-						<!-- Residential -->
-						<div id="residential" class="mySelect_hide mySelect_res">
-							<div class="col-md-4">
-								<label for="nb_apartments">Number of Apartements</label>
-								<input required type="number" onkeyup="quantityResi(gamme)" min="0" max="1000" id="residential_nb_apartments">
-							</div> 
-							<div class="col-md-4">
-								<label for="nb_floors">Number of Floors</label>
-								<input required type="number" onkeyup="quantityResi(gamme)" min="0" max="1000" id="residential_nb_floors">
-							</div>
-							<div class="col-md-4">
-								<label for="nb_basements">Number of Basements</label>
-								<input required type="number" min="0" max="1000" id="residential_nb_basements">
-							</div>
-						</div>
-						<!-- Residential -->
+		<section class="page-header page-header-xs">
+			<div class="container">
 
-						<!-- Commercial -->
-						<div id="commercial" class="mySelect_hide mySelect_com">
-							<div class="col-md-4">
-								<label for="commercial_nb_building">Number of distinct businesses</label>
-								<input required type="number" min="0" max="1000" id="commercial_nb_building">
-							</div>
-							<div class="col-md-4">
-								<label for="commercial_nb_floors">Number of Floors </label>
-								<input required type="number" min="0" max="1000" id="commercial_nb_floors">
-							</div>
-							<div class="col-md-4">
-								<label for="commercial_nb_basements">Number of Basements</label>
-								<input required type="number" min="0" max="1000" id="commercial_nb_basements">
-							</div>
-							<div class="col-md-4">
-								<label for="commercial_nb_parking">Number of Parking </label>
-								<input required type="number" min="0" max="1000" id="commercial_nb_parking">
-							</div>
-							<div class="col-md-4">
-								<label for="quantity_elevator">Number of Elevators Needed</label>
-								<input required type="number" onkeyup="shaft()" min="0" max="1000" id="commercial_nb_elevator">
-							</div>
-						</div>
-						<!-- Commercial -->
-						<!-- Corporate -->
-						<div id="corporate" class="mySelect_hide mySelect_corp">
-							<div class="col-md-4">
-								<label for="corporate_nb_tenants">Number of separate tenant companies ? </label>
-								<input required type="number" min="0" max="1000" onkeyup="quantity_corp(gamme)" id="corporate_nb_tenants">
-							</div>
-							<div class="col-md-4">
-								<label for="corporate_nb_floors">Number of floors</label>
-								<input required type="number" min="0" max="1000" onkeyup="quantity_corp(gamme)" id="corporate_nb_floors">
-							</div>
-							<div class="col-md-4">
-								<label for="corporate_nb_basements">Number of Basement</label>
-								<input required type="number" min="0" max="1000" onkeyup="quantity_corp(gamme)" id="corporate_nb_basements">
-							</div>
-							<div class="col-md-4">
-								<label for="corporate_nb_parking">Number of Parking</label>
-								<input required type="number" min="0" max="1000" onkeyup="quantity_corp(gamme)" id="corporate_nb_parking">
-							</div>
-							<div class="col-md-4">
-								<label for="corporate_nb_occupants">Number of Occupants per Floors</label>
-								<input required type="number" min="0" max="1000" onkeyup="quantity_corp(gamme)" id="corporate_nb_occupants">
-							</div>
-						</div>
-						<!-- Corporate -->
-						<!-- Hybrid -->
-						<div id="hybrid" class="mySelect_hide mySelect_hyb">
-							<div class="col-md-4">
-								<label for="hybrid_nb_businesses">Number of distinct Businesse</label>
-								<input type="number" min="0" max="1000" onkeyup="quantity_hyb(gamme)" id="hybrid_nb_businesses">
-							</div>
-							<div class="col-md-4">
-								<label for="hybrid_nb_floors">Number of floors</label>
-								<input type="number" min="0" max="1000" onkeyup="quantity_hyb(gamme)" id="hybrid_nb_floors">
-							</div>
-							<div class="col-md-4">
-								<label for="hybrid_nb_basements">Number of Basement</label>
-								<input type="number" min="0" max="1000" onkeyup="quantity_hyb(gamme)" id="hybrid_nb_basements">
-							</div>
-							<div class="col-md-4">
-								<label for="hybrid_nb_parking">Number of Parking</label>
-								<input type="number" min="0" max="1000" onkeyup="quantity_hyb(gamme)" id="hybrid_nb_parking">
-							</div>
-							<div class="col-md-4">
-								<label for="occupants_max">Number of Occupants per Floors</label>
-								<input type="number" min="0" max="1000" onkeyup="quantity_hyb(gamme)" id="hybrid_nb_occupants">
-							</div>
-							<div class="col-md-4">
-								<label for="hybrid_nb_activity">Operating Activity of the Building</label>
-								<input type="number" min="0" max="1000" id="hybrid_nb_activity">
-							</div>
-	
-						</div>
-						<!--/hybrid-->
-					
-					</fieldset>
-					<!-- /Inputs Form -->
-					
-					<!-- Quality Service Type -->
-					<fieldset id="gamme" class="mySelect_hide mySelect_res mySelect_com mySelect_corp mySelect_hyb" >
-						
-						
-							<h4>Make Your Choice</h4>
-	
-							<div class="toggle-transparent toggle-bordered-full clearfix">
-								<div class="toggle active toggle-content row m-0-bottom">
-									
-											<div class="col-lg-12 m-0 clearfix">
-												<label class="mt-0 fs-14 fw-400 radio float-left">
-													<input id="standard" type="radio" name="radioanswer" onchange="pricetotal('standard')" value="7565" />
-													<i></i> <span class="fw-300 gamme">Standard setup</span>
-												</label>
-											</div>
-	
-											<div class="col-lg-12 m-0 clearfix">
-												<label class="mt-0 fs-14 fw-400 radio float-left">
-													<input id="premium" type="radio" name="radioanswer" onchange="pricetotal('premium')" value="12345" />
-													<i></i> <span class="fw-300 gamme">Premium setup</span>
-												</label>
-											</div>
-	
-											<div class="col-lg-12 m-0 clearfix">
-												<label class="mt-0 fs-14 fw-400 radio float-left">
-													<input id="excelium" type="radio" name="radioanswer" onchange="pricetotal('excelium')" value="15400" />
-													<i></i> <span class="fw-300 gamme">Excelium setup</span>
-												</label>
-											</div>
-	
-								</div>
-							</div>
-						
-					</fieldset>		
-					<!-- /Quality Service Type -->
-	
-					<!-- Final Result -->
-					<div id="result_final" class="mySelect_hide mySelect_res mySelect_com mySelect_corp mySelect_hyb">
-						
-						<span id="total_elevator" class="float-right"></span>
-							<class="float-left">Total Elevator:</class>
-								<hr />
-								
-								<span class="clearfix">
-									<span id="installation-price" class="float-right"></span>
-									<class="float-left">Installation price:</class>
-								</span>
-									
-									<hr />
-									<hr />
-								<span class="clearfix">
-									<span id="total" class="float-right fs-20"></span>
-										<span class="float-left">SubTotal: </span>
-									</span>
-									<hr />
-									<hr />
-								<span class="clearfix">
-									<span id="subtotal" class="float-right fs-20"></span>
-									<strong class="float-left">TOTAL:</strong>
-								</span>
-									<hr />
-	
-					</div>
-				
-					<!-- /Final Result -->
-			</form>
+				<h1>GET A QUOTE</h1>
+
 			</div>
 		</section>
+		<!-- /PAGE HEADER -->
+
+		<section>
+			<div class="container">
+
+				<!-- Useful Elements -->
+				<div class="card card-default">
+					<div class="card-heading card-heading-transparent">
+						<h2 class="card-title"></h2>
+					</div>
+
+					<div class="card-block">
+
+						<form class="validate" action="php/contact.php" method="post" enctype="multipart/form-data"
+							data-success="Sent! Thank you!" data-toastr-position="top-right">
+							<fieldset>
+								<!-- required [php action request] -->
+								<input type="hidden" name="action" value="contact_send" />
+
+								<div>
+									<div class="row">
+										<div class="col-md-12 col-sm-12">
+											<label>Type of Building*</label>
+											<select name="contact[Type]" class="form-control pointer required"
+												id="building">
+												<option value="0">--- Select ---</option>
+												<option value="1">Residential</option>
+												<option value="2">Commercial</option>
+												<option value="3">Corporate</option>
+												<option value="4">Hybrid</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<br />
+
+								<div id="residentialForm" style="display:none">
+									<!-- START OF RESIDENTIAL FORM -->
+									<div class="row">
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Apartments*</label>
+											<input type="number" name="residential[apartments]" value="" min="1"
+												class="form-control required resFields">
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Floors*</label>
+											<input type="number" name="residential[floors]" value="" min="1"
+												class="form-control required resFields">
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Basements*</label>
+											<input type="number" name="residential[basements]" value="" min="1"
+												class="form-control required">
+										</div>
+									</div>
+
+								</div> <!-- END OF RESIDENTIAL FORM -->
+
+
+								<div id="commercialForm" style="display:none">
+									<!-- START OF COMMERCIAL FORM -->
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<label>Number of Distinct Businesses*</label>
+											<input type="number" name="commercial[businesses]" value="" min="1"
+												class="form-control">
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<label>Number of Floors*</label>
+											<input type="number" name="commercial[floors]" value="" min="1"
+												class="form-control">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Basements*</label>
+											<input type="number" name="commercial[basements]" value="" min="1"
+												class="form-control">
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Parking Spaces*</label>
+											<input type="number" name="commercial[parking]" value="" min="1"
+												class="form-control">
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Elevator Cages Needed*</label>
+											<input type="number" name="commercial[cages]" value="" min="1"
+												class="form-control required comField">
+										</div>
+									</div>
+
+								</div> <!-- END OF COMMERCIAL FORM -->
+
+								<div id="corporateForm" style="display:none">
+									<!-- START OF CORPORATE FORM -->
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<label>Number of Separate Tenant Companies*</label>
+											<input type="number" name="contact[companies]" value="" min="1"
+												class="form-control required">
+										</div>
+										<div class="col-md-6 col-sm-6">
+											<label>Number of Floors*</label>
+											<input type="number" name="contact[floors]" value="" min="1"
+												class="form-control required corporateField">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Basements*</label>
+											<input type="number" name="contact[basements]" value="" min="1"
+												class="form-control required corporateField">
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Parking Spaces*</label>
+											<input type="number" name="contact[parking]" value="" min="1"
+												class="form-control required">
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Occupants per Floor*</label>
+											<input type="number" name="contact[occupants]" value="" min="1"
+												class="form-control required corporateField">
+										</div>
+									</div>
+
+								</div>
+								<!--END OF CORPORATE FORM-->
+
+								<div id="hybridForm" style="display:none">
+									<!-- START OF HYBRID FORM -->
+									<div class="row">
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Distinct Businesses*</label>
+											<input type="number" name="contact[businesses]" value="" min="1"
+												class="form-control required">
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Floors*</label>
+											<input type="number" name="contact[floors]" value="" min="1"
+												class="form-control required hybFields">
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Basements*</label>
+											<input type="number" name="contact[basements]" value="" min="1"
+												class="form-control required hybFields">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Parking Spaces*</label>
+											<input type="number" name="contact[parking]" value="" min="1"
+												class="form-control required">
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Max Occupants per Floor*</label>
+											<input type="number" name="contact[occupants]" value="" min="1"
+												class="form-control required hybFields">
+										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Hours of Activity*</label>
+											<input type="number" name="contact[activity]" value="" min="1" max="24"
+												class="form-control required">
+										</div>
+									</div>
+
+								</div>
+								<!--END OF HYBRID FORM-->
+
+								<br />
+
+								<div class="row">
+									<div class="col-md-4 col-sm-4">
+										<label>Number of Elevators*</label>
+										<input type="text" name="contact[elevatorsHyb]" value="0"
+											class="form-control required elevator" readonly>
+									</div>
+								</div>
+
+								<hr>
+
+								<div>
+									<!-- START OF PRICES SELECTION-->
+									<div class="radioButtons">
+										<h4>Select the range of elevators : </h4>
+										<div class="row" style="justify-content: space-around;" id="radioButtons">
+
+											<label for="standard"> <input type="radio" id="standard" name="radio"
+												onclick="packagePrice()" class="buttons" value="0">
+												Standard </label>
+
+
+											<label for="premium"> <input type="radio" id="premium" name="radio"
+												onclick="packagePrice()" class="buttons" value="1">
+												Premium </label>
+
+
+											<label for="excelium"> <input type="radio" id="excelium" class="buttons"
+													onclick="packagePrice()" name="radio" value="2">
+												Excelium </label>
+										</div>
+										<br>
+										<div class="row">
+											<div class="col-md-4 col-sm-4">
+												<label>Elevators price<input type="text" name="price" value=""
+														class="form-control required price" readonly></label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-4 col-sm-4">
+												<label>Installation fees</label>
+												<input type="text" name="installation" value=""
+													class="form-control required installation" readonly>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-4 col-sm-4">
+												<label>Total Price</label>
+												<input type="text" name="installation" value=""
+													class="form-control required total" readonly>
+											</div>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+
+					</div>
+					<!-- END OF PRICES SELECTION-->
+				</div>
+			</div>
+
+
+
+			<div class="container">
+				<div class="row justify-content-md-center">
+					<div class="col-md-8">
+						<button type="submit" class="btn btn-3d btn-red btn-xlg btn-block mt-30">
+							SEND QUOTE FORM
+							<span class="block font-lato">We'll get back to you within 48 hours</span>
+						</button>
+					</div>
+				</div>
+			</div>
+	</div>
 	
 			<!-- SUBMIT Button -->
 		<!-- /SUBMIT Button -->
@@ -420,6 +474,6 @@
 	<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 
 	<script src="assets/js/scripts.js"></script>
-	<script src="assets/js/quotecalc.js"></script>
+	<script src="assets/js/quote.js"></script>
 
 </html>
