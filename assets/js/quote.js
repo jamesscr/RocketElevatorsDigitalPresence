@@ -1,4 +1,4 @@
-// Show fields depending on building type //
+// variable of building types //
 
 let building = document.querySelector("#building");
 let residential = document.querySelector("#residentialForm");
@@ -7,34 +7,40 @@ let corporate = document.querySelector("#corporateForm");
 let hybrid = document.querySelector("#hybridForm");
 let elevator = document.getElementsByClassName("elevator")[0];
 
+// Show fields depending on building type //
 building.addEventListener("change", function () {
+        // if on select value 0=
     if (building.value == 0) {
         residential.style.display = "none";
         commercial.style.display = "none";
         corporate.style.display = "none";
         hybrid.style.display = "none";
+        // if on residential select value 1
     } else if (building.value == 1) {
         residential.style.display = "block";
         commercial.style.display = "none";
         corporate.style.display = "none";
         hybrid.style.display = "none";
+        // if on commercial select value 2
     } else if (building.value == 2) {
         commercial.style.display = "block";
         residential.style.display = "none";
         corporate.style.display = "none";
         hybrid.style.display = "none";
+        // if on corporate select value 3
     } else if (building.value == 3) {
         corporate.style.display = "block";
         commercial.style.display = "none";
         residential.style.display = "none";
         hybrid.style.display = "none";
+        // if on hybrid select value 4//
     } else if (building.value == 4) {
         hybrid.style.display = "block";
         residential.style.display = "none";
         commercial.style.display = "none";
         corporate.style.display = "none";
     }
-
+      // for loop uncheck radio button fields and elevator to 0//
     for (var b = 0; b < buttons.length; b++) {
         buttons[b].checked = false;
         elevator.value = 0;
@@ -45,7 +51,7 @@ building.addEventListener("change", function () {
 });
 
 
-// Get number of elevators for residential // 
+// for residential // 
 
 let resFields = document.getElementsByClassName("resFields");
 let resArray = Array.from(resFields);
@@ -69,7 +75,7 @@ for (var r = 0; r < resArray.length; r++) {
     })
 }
 
-// Get number of elevators for commercial// 
+// for commercial// 
 let comField = document.getElementsByClassName("comField");
 let comArray = Array.from(comField);
 
@@ -97,7 +103,7 @@ for (var c = 0; c < comArray.length; c++) {
 
         
 
-// Get number of elevators for corporate // 
+// for corporate // 
 
 let corpFields = document.getElementsByClassName("corporateField");
 let corporateArray = Array.from(corpFields);
@@ -121,7 +127,7 @@ for (var p = 0; p < corporateArray.length; p++) {
     });
 }
 
-// Get number of elevators for hybrid // 
+// for hybrid // 
 
 let hybFields = document.getElementsByClassName("hybFields");
 let hybridArray = Array.from(hybFields);
@@ -145,7 +151,7 @@ for (var h = 0; h < hybridArray.length; h++) {
     });
 }
 
-// Get unit price for different packages
+// unit price for different packages
 let buttons = document.getElementsByClassName("buttons");
 let prices = document.getElementsByClassName("price")[0];
 let installation = document.getElementsByClassName("installation")[0];
