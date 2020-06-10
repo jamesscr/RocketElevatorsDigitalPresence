@@ -157,7 +157,7 @@
 								<br />
 
 								<div id="residentialForm" style="display:none">
-									<!-- START OF RESIDENTIAL FORM -->
+									<!-- RESIDENTIAL FORM -->
 									<div class="row">
 										<div class="col-md-4 col-sm-4">
 											<label>Number of Apartments*</label>
@@ -176,45 +176,45 @@
 										</div>
 									</div>
 
-								</div> <!-- END OF RESIDENTIAL FORM -->
+								</div> <!--/RESIDENTIAL FORM -->
 
 
 								<div id="commercialForm" style="display:none">
-									<!-- START OF COMMERCIAL FORM -->
+									<!--COMMERCIAL FORM -->
 									<div class="row">
 										<div class="col-md-6 col-sm-6">
 											<label>Number of Distinct Businesses*</label>
 											<input type="number" name="commercial[businesses]" value="" min="1"
-												class="form-control">
+												class="form-control required">
 										</div>
 										<div class="col-md-6 col-sm-6">
 											<label>Number of Floors*</label>
 											<input type="number" name="commercial[floors]" value="" min="1"
-												class="form-control">
+												class="form-control required">
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-4 col-sm-4">
 											<label>Number of Basements*</label>
 											<input type="number" name="commercial[basements]" value="" min="1"
-												class="form-control">
-										</div>
-										<div class="col-md-4 col-sm-4">
-											<label>Number of Parking Spaces*</label>
-											<input type="number" name="commercial[parking]" value="" min="1"
-												class="form-control">
+												class="form-control required">
 										</div>
 										<div class="col-md-4 col-sm-4">
 											<label>Number of Elevator Cages Needed*</label>
 											<input type="number" name="commercial[cages]" value="" min="1"
 												class="form-control required comField">
 										</div>
+										<div class="col-md-4 col-sm-4">
+											<label>Number of Parking Spaces*</label>
+											<input type="number" name="commercial[parking]" value="" min="1"
+												class="form-control required">
+										</div>
 									</div>
 
-								</div> <!-- END OF COMMERCIAL FORM -->
+								</div> <!--/COMMERCIAL FORM -->
 
 								<div id="corporateForm" style="display:none">
-									<!-- START OF CORPORATE FORM -->
+									<!--CORPORATE FORM -->
 									<div class="row">
 										<div class="col-md-6 col-sm-6">
 											<label>Number of Separate Tenant Companies*</label>
@@ -246,10 +246,10 @@
 									</div>
 
 								</div>
-								<!--END OF CORPORATE FORM-->
+								<!--/CORPORATE FORM-->
 
 								<div id="hybridForm" style="display:none">
-									<!-- START OF HYBRID FORM -->
+									<!--  HYBRID FORM -->
 									<div class="row">
 										<div class="col-md-4 col-sm-4">
 											<label>Number of Distinct Businesses*</label>
@@ -286,7 +286,7 @@
 									</div>
 
 								</div>
-								<!--END OF HYBRID FORM-->
+								<!--/HYBRID FORM-->
 
 								<br />
 
@@ -301,7 +301,7 @@
 								<hr>
 
 								<div>
-									<!-- START OF PRICES SELECTION-->
+									<!-- PRICES SELECTION-->
 									<div class="radioButtons">
 										<h4>Select the range of elevators : </h4>
 										<div class="row" style="justify-content: space-around;" id="radioButtons">
@@ -323,8 +323,16 @@
 										<br>
 										<div class="row">
 											<div class="col-md-4 col-sm-4">
-												<label>Elevators price<input type="text" name="price" value=""
-														class="form-control required price" readonly></label>
+												<label>Unit price</label>
+												<input type="text" name="price" value=""
+														class="form-control required unitNum" readonly>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-4 col-sm-4">
+												<label>Elevators price</label> 
+												<input type="text" name="price" value=""
+														class="form-control required price" readonly>
 											</div>
 										</div>
 										<div class="row">
@@ -347,7 +355,7 @@
 						</form>
 
 					</div>
-					<!-- END OF PRICES SELECTION-->
+					<!-- /PRICES SELECTION-->
 				</div>
 			</div>
 
@@ -357,7 +365,7 @@
 				<div class="row justify-content-md-center">
 					<div class="col-md-8">
 						<button type="submit" class="btn btn-3d btn-red btn-xlg btn-block mt-30">
-							SEND QUOTE FORM
+							SEND FORM
 							<span class="block font-lato">We'll get back to you within 48 hours</span>
 						</button>
 					</div>

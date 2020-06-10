@@ -9,7 +9,7 @@ let elevator = document.getElementsByClassName("elevator")[0];
 
 // Show fields depending on building type //
 building.addEventListener("change", function () {
-        // if on select value 0=
+    // if on select value 0=
     if (building.value == 0) {
         residential.style.display = "none";
         commercial.style.display = "none";
@@ -40,7 +40,7 @@ building.addEventListener("change", function () {
         commercial.style.display = "none";
         corporate.style.display = "none";
     }
-      // for loop uncheck radio button fields and elevator to 0//
+    // for loop uncheck radio button fields and elevator to 0//
     for (var b = 0; b < buttons.length; b++) {
         buttons[b].checked = false;
         elevator.value = 0;
@@ -58,20 +58,21 @@ let resArray = Array.from(resFields);
 
 for (var r = 0; r < resArray.length; r++) {
     resArray[r].addEventListener("blur", function () {
+        // built variables
+        let apartments = document.getElementsByName("residential[apartments]")[0];
+        let floorsRes = document.getElementsByName("residential[floors]")[0];
+        // number of apartment divided by number of floors to obtain average doors per floor
+        let avgDoors = parseInt(apartments.value) / parseInt(floorsRes.value);
+        // the average doors is divided by 6 to odtain the 
+        let numElevators = avgDoors / 6;
+        let numColumns = Math.ceil(floorsRes.value / 20);
 
-            let apartments = document.getElementsByName("residential[apartments]")[0];
-            let floorsRes = document.getElementsByName("residential[floors]")[0];
 
-            let avgDoors = parseInt(apartments.value) / parseInt(floorsRes.value);
-            let numElevators = avgDoors / 6;
-            let numColumns = Math.ceil(floorsRes.value / 20);
+        if (apartments.value.length > 0 && floorsRes.value.length > 0) {
 
+            elevator.value = Math.ceil(numElevators) * numColumns;
 
-            if (apartments.value.length > 0 && floorsRes.value.length > 0) {
-
-                elevator.value = Math.ceil(numElevators) * numColumns;
-
-            }
+        }
     })
 }
 
@@ -81,27 +82,21 @@ let comArray = Array.from(comField);
 
 for (var c = 0; c < comArray.length; c++) {
     comArray[c].addEventListener("blur", function () {
-         
+
         let elevatorNeeded = document.getElementsByName("commercial[cages]")[0];
-        
-            //elevator.value = elevatorNeeded.value;
-         //elevator.value = elevatorNeeded.value;
 
-         if (elevatorNeeded.value.length > 0 && elevator.value.length > 0) {
-                
+        //elevator.value = elevatorNeeded.value;
+        //elevator.value = elevatorNeeded.value;
+
+        if (elevatorNeeded.value.length > 0) {
+
             elevator.value = elevatorNeeded.value;
-            
-        }   
 
-            
+        }
+
+
     });
 }
-
-
-   
-
-
-        
 
 // for corporate // 
 
@@ -151,23 +146,35 @@ for (var h = 0; h < hybridArray.length; h++) {
     });
 }
 
-// unit price for different packages
+// variable for radio range
 let buttons = document.getElementsByClassName("buttons");
+// variable for radio range
+let unitNum = document.getElementsByClassName("unitNum")[0];
 let prices = document.getElementsByClassName("price")[0];
 let installation = document.getElementsByClassName("installation")[0];
 let total = document.getElementsByClassName("total")[0];
+// unit price for different packages
 let unit = [7565, 12345, 15400];
 let fees = [0.10, 0.13, 0.16];
 
+//for loop to output  results info
 function packagePrice() {
     for (var i = 0; i < buttons.length; i++) {
+        // if statement of range of standard or premium or excelium
         if (buttons[i].checked) {
+            // display info price for one elevator
+            let unitPrice = parseFloat((unit[i]) * 1);
+            unitNum.value = "$ " + unitPrice.toFixed(2);
+            // display info price for number of elevator chosen
             let price = parseFloat(elevator.value * unit[i]);
             prices.value = "$ " + price.toFixed(2);
-            let fee = parseFloat(price * (1+fees[i])) - price;
+            // display installation fee
+            let fee = parseFloat(price * (1 + fees[i])) - price;
             installation.value = "$ " + fee.toFixed(2);
+            // display total price
             let totalPrice = parseFloat(price) + parseFloat(fee);
             total.value = "$ " + totalPrice.toFixed(2);
-        } 
+        }
+
     }
 }
