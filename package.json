@@ -1,7 +1,7 @@
 {
   "name": "rocketelevatorsdigitalpresence",
   "version": "1.0.0",
-  "description": "Rocket Elavator app by James Allan.",
+  "description": "Rocket Elevators",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,16 +11,16 @@
     "url": "git+https://github.com/jamesscr/RocketElevatorsDigitalPresence.git"
   },
   "keywords": [
-    "data",
-    "quote"
+    "quote",
+    "data"
   ],
-  "author": "James Allan.",
+  "author": "James",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jamesscr/RocketElevatorsDigitalPresence/issues"
   },
   "homepage": "https://github.com/jamesscr/RocketElevatorsDigitalPresence#readme",
   "dependencies": {
-    "espress": "0.0.0"
+    "express": "^4.17.1"
   }
 }
