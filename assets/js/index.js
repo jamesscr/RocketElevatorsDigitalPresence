@@ -1,1 +1,10 @@
-console.log('hello');
+const express = require("express");
+const app = express();
+
+app.get("./", (req, res)=> {
+    res.send("Hello World!!!!!!");
+});
+app.use(express.static('ROCKETELEVATORSDIGITALPRESENCE'));
+
+// PORT
+app.listen(3000, () => console.log('Listening on 3000'));
