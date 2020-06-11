@@ -1,0 +1,18 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "Rocket Elevators",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "data, quote"
+  },
+  "author": "James",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
