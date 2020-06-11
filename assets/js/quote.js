@@ -67,7 +67,6 @@ for (var r = 0; r < resArray.length; r++) {
         let numElevators = avgDoors / 6;
         let numColumns = Math.ceil(floorsRes.value / 20);
 
-
         if (apartments.value.length > 0 && floorsRes.value.length > 0) {
 
             elevator.value = Math.ceil(numElevators) * numColumns;
@@ -82,19 +81,11 @@ let comArray = Array.from(comField);
 
 for (var c = 0; c < comArray.length; c++) {
     comArray[c].addEventListener("blur", function () {
-
         let elevatorNeeded = document.getElementsByName("commercial[cages]")[0];
-
-        //elevator.value = elevatorNeeded.value;
-        //elevator.value = elevatorNeeded.value;
-
+        
         if (elevatorNeeded.value.length > 0) {
-
             elevator.value = elevatorNeeded.value;
-
         }
-
-
     });
 }
 
@@ -137,7 +128,6 @@ for (var h = 0; h < hybridArray.length; h++) {
         let totalOccupants = occupants.value * numStories;
         let numElevators = Math.ceil(totalOccupants / 1000);
         let numColumns = Math.ceil(numStories / 20);
-
 
         if (occupants.value.length > 0 && basements.value.length > 0 && floors.value.length > 0) {
             let elevPerCol = Math.ceil(numElevators / numColumns);
