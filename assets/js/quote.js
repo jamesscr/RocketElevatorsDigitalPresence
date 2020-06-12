@@ -63,13 +63,14 @@ for (var r = 0; r < resArray.length; r++) {
         let floorsRes = document.getElementsByName("residential[floors]")[0];
         // number of apartment divided by number of floors to obtain average doors per floor
         let avgDoors = parseInt(apartments.value) / parseInt(floorsRes.value);
-        // the average doors is divided by 6 to odtain the 
+        // the average doors is divided by 6 to obtain the number of elevators 
         let numElevators = avgDoors / 6;
+        // number of floors is divided by 20 to obtain the number of coloums
         let numColumns = Math.ceil(floorsRes.value / 20);
-
+        //  if statement to whether the value of the array is greater than zero/have any entry
         if (apartments.value.length > 0 && floorsRes.value.length > 0) {
 
-            elevator.value = Math.ceil(numElevators) * numColumns;
+            return elevator.value = Math.ceil(numElevators) * numColumns;
 
         }
     })
@@ -78,13 +79,15 @@ for (var r = 0; r < resArray.length; r++) {
 // for commercial// 
 let comField = document.getElementsByClassName("comField");
 let comArray = Array.from(comField);
-
+// built variables
+//for loop
 for (var c = 0; c < comArray.length; c++) {
     comArray[c].addEventListener("blur", function () {
+        //variable
         let elevatorNeeded = document.getElementsByName("commercial[cages]")[0];
-        
+        //number of elevator require is equql to number of elevator needed
         if (elevatorNeeded.value.length > 0) {
-            elevator.value = elevatorNeeded.value;
+            return elevator.value = elevatorNeeded.value;
         }
     });
 }
@@ -95,20 +98,24 @@ let corpFields = document.getElementsByClassName("corporateField");
 let corporateArray = Array.from(corpFields);
 
 for (var p = 0; p < corporateArray.length; p++) {
+    //function expression
     corporateArray[p].addEventListener("blur", function () {
-
+        //the variables
         let occupants = document.getElementsByName("contact[occupants]")[0];
         let floors = document.getElementsByName("contact[floors]")[0];
         let basements = document.getElementsByName("contact[basements]")[0];
-
+        //number of total stories is equal to number of floors plus the number of basement
         let numStories = parseInt(floors.value) + parseInt(basements.value);
+        //total number of occupants is number of occupany per floors multiply by the number of stories
         let totalOccupants = occupants.value * numStories;
+        //number of elevators is the number of the total occupants divided by 1000
         let numElevators = Math.ceil(totalOccupants / 1000);
+        //the number of stories is divided by 20 to obtain the number of coloums
         let numColumns = Math.ceil(numStories / 20);
-
+        //if statement with binary expression
         if (occupants.value.length > 0 && basements.value.length > 0 && floors.value.length > 0) {
             let elevPerCol = Math.ceil(numElevators / numColumns);
-            elevator.value = elevPerCol * numColumns;
+            return elevator.value = elevPerCol * numColumns;
         }
     });
 }
@@ -119,19 +126,24 @@ let hybFields = document.getElementsByClassName("hybFields");
 let hybridArray = Array.from(hybFields);
 
 for (var h = 0; h < hybridArray.length; h++) {
+    //function expression
     hybridArray[h].addEventListener("blur", function () {
+        //the variables
         let occupants = document.getElementsByName("contact[occupants]")[1];
         let floors = document.getElementsByName("contact[floors]")[1];
         let basements = document.getElementsByName("contact[basements]")[1];
-
+        //number of total stories is equal to number of floors plus the number of basement
         let numStories = parseInt(floors.value) + parseInt(basements.value);
+        //total number of occupants is number of occupany per floors multiply by the number of stories
         let totalOccupants = occupants.value * numStories;
+        //number of elevators is the number of the total occupants divided by 1000
         let numElevators = Math.ceil(totalOccupants / 1000);
+        //the number of stories is divided by 20 to obtain the number of coloums
         let numColumns = Math.ceil(numStories / 20);
-
+        //if statement with binary expression
         if (occupants.value.length > 0 && basements.value.length > 0 && floors.value.length > 0) {
             let elevPerCol = Math.ceil(numElevators / numColumns);
-            elevator.value = elevPerCol * numColumns;
+            return elevator.value = elevPerCol * numColumns;
         }
     });
 }
