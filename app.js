@@ -5,7 +5,7 @@ const app = express();
 app.use('/view',express.static(path.join(__dirname,'static')));
 app.set('view engine','ejs');
 app.get('/',(req,res)=>{
-    res.render('quotecalc');
+    res.render('index');
 });
 
 
